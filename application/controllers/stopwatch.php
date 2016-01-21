@@ -14,8 +14,8 @@ class Stopwatch extends CI_Controller {
 		//ストップウォッチ画面を、ビューに出力
 		$this->parser->parse(
 				'stopwatch_welcome',
-				array(
-				)
+				[
+				]
 				);
 	}
 
@@ -32,8 +32,8 @@ class Stopwatch extends CI_Controller {
 		//開始時刻を取り出し、ビューに出力
 		$this->parser->parse(
 				'stopwatch_started',
-				array(	'start_time'=>date('H:i:s', $startTime),
-				)
+				[	'start_time'=>date('H:i:s', $startTime),
+				]
 				);
 	}
 
@@ -54,10 +54,10 @@ class Stopwatch extends CI_Controller {
 		//ストップウォッチ計算機から結果を取り出し、ビューに出力
 		$this->parser->parse(
 				'stopwatch_stoped',
-				array(	'start_time'=>date('H:i:s', $this->calcurator->getStartTimeInMillis()),
-						'stop_time'=>date('H:i:s', $this->calcurator->getStopTimeInMillis()),
-						'span_time'=>gmdate('H:i:s', $this->calcurator->getSpanTimeInMillis()),
-				)
+				[	'start_time'=>date('H:i:s', $this->calcurator->getStartTimeInMillis()),
+					'stop_time'=>date('H:i:s', $this->calcurator->getStopTimeInMillis()),
+					'span_time'=>gmdate('H:i:s', $this->calcurator->getSpanTimeInMillis()),
+				]
 				);
 	}
 	
